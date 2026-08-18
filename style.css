@@ -3,7 +3,7 @@
 ========================================================= */
 
 :root {
-  --background: #0a1b3d;
+  --background: #141849;
   --background-light: #112240;
 
   --text-primary: #ccd6f6;
@@ -67,7 +67,7 @@ a {
     var(--content-width);
 }
 .sidebar {
-    background-color: #1e222975;
+  background-color: #1e222975;
 }
 
 /* =========================================================
@@ -650,9 +650,7 @@ a {
 
 .skills-wrapper {
   display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
+  grid-template-columns: 1fr;
   gap: 22px;
 }
 
@@ -665,9 +663,9 @@ a {
 .skill-group h4 {
   color: var(--white);
 
-  font-size: 1rem;
+  font-size: 1.4rem;
 
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 
 .skill-list {
@@ -689,8 +687,8 @@ a {
 }
 
 .h5-skill {
-    margin-top: 20px;
-    margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 /* =========================================================
    FOOTER
@@ -835,11 +833,26 @@ a {
 }
 /*ikon*/
 a i {
-    font-size: 30px;
+  font-size: 30px;
 }
 .fa-envelope {
-    font-size: 15px;
+  font-size: 15px;
 }
 .fa-phone {
-    font-size: 15px;
+  font-size: 15px;
+}
+
+body {
+    background-image:
+        linear-gradient(
+            rgba(8, 8, 8, 0.88),
+            rgba(8, 8, 8, 0.88)
+        ),
+        url("images/link-photo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
 }
