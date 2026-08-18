@@ -66,6 +66,9 @@ a {
     var(--sidebar-width)
     var(--content-width);
 }
+.sidebar {
+    background-color: #1e222975;
+}
 
 /* =========================================================
    LEFT SIDEBAR
