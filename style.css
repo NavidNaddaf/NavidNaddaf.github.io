@@ -826,3 +826,7 @@ a {
     min-height: auto;
   }
 }
+/*ikon*/
+a i {
+    font-size: 30px;
+}
