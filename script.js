@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMessage = document.getElementById("form-message");
 
   const currentYear = document.getElementById("current-year");
-
+  
   /* =====================================================
        PAGE LOADER
     ===================================================== */
