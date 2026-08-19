@@ -278,3 +278,34 @@ window.addEventListener("load", () => {
 
   updateActiveNavigation();
 });
+/* ------------------google amar--------------------- */
+document.querySelectorAll('a[href]').forEach(link => {
+    link.addEventListener('click', function () {
+
+        const href = this.href;
+
+        if (href.includes('github.com')) {
+            gtag('event', 'github_click');
+        }
+
+        else if (href.includes('linkedin.com')) {
+            gtag('event', 'linkedin_click');
+        }
+
+        else if (href.includes('instagram.com')) {
+            gtag('event', 'instagram_click');
+        }
+
+        else if (href.includes('youtube.com')) {
+            gtag('event', 'youtube_click');
+        }
+
+        else if (href.startsWith('mailto:')) {
+            gtag('event', 'email_click');
+        }
+
+        else if (href.startsWith('tel:')) {
+            gtag('event', 'phone_click');
+        }
+    });
+});
