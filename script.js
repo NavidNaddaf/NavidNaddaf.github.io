@@ -162,7 +162,7 @@ projectCards.forEach((card) => {
 
 const revealElements = [
   ...document.querySelectorAll(
-    ".content-section, .experience-card, .project-card, .skill-group",
+    ".content-section, .Certificate-card, .project-card, .skill-group",
   ),
 ];
 
@@ -258,6 +258,19 @@ if (hero && content) {
       passive: true,
     },
   );
+}
+
+/* ================================BACK TO TOP============================= */
+
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop && content) {
+  backToTop.addEventListener("click", () => {
+    content.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
 
 window.addEventListener("load", () => {

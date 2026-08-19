@@ -447,10 +447,10 @@ a {
 }
 
 /* =========================================================
-   EXPERIENCE
+   Certificate
 ========================================================= */
 
-.experience-list {
+.Certificate-list {
   display: flex;
 
   flex-direction: column;
@@ -458,7 +458,7 @@ a {
   gap: 20px;
 }
 
-.experience-card {
+.Certificate-card {
   display: grid;
 
   grid-template-columns: 150px 1fr;
@@ -472,7 +472,7 @@ a {
   transition: 0.3s ease;
 }
 
-.experience-card:hover {
+.Certificate-card:hover {
   background: rgba(17, 34, 64, 0.7);
 
   border-color: var(--border);
@@ -480,7 +480,7 @@ a {
   transform: translateY(-3px);
 }
 
-.experience-date {
+.Certificate-date {
   color: var(--text-secondary);
 
   font-size: 0.72rem;
@@ -490,7 +490,7 @@ a {
   padding-top: 5px;
 }
 
-.experience-content h4 {
+.Certificate-content h4 {
   color: var(--white);
 
   font-size: 1.2rem;
@@ -506,7 +506,7 @@ a {
   font-size: 0.9rem;
 }
 
-.experience-content > p {
+.Certificate-content > p {
   color: var(--text-secondary);
 
   line-height: 1.8;
@@ -693,19 +693,122 @@ a {
 /* =========================================================
    FOOTER
 ========================================================= */
-
 .footer {
-  padding: 70px 90px;
-
-  border-top: 1px solid var(--border);
-
-  color: var(--text-secondary);
-
-  font-size: 0.75rem;
-
-  line-height: 1.8;
+    width: 100%;
+    margin-top: 120px;
+    padding: 70px 40px 10px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    max-width: 250px;
+    line-height: 1.8;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    margin-bottom: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 14px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    padding-left: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 1.3rem;
+
+    transition: .3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-6px);
+}
+
+.footer-bottom {
+    margin-top: 10px;
+
+    padding-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.back-to-top {
+    width: 55px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+    transition: .3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-8px);
+}
+
+@media (max-width: 768px) {
+
+    .footer-container,
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 50px 25px;
+    }
+}
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -796,7 +899,7 @@ a {
     min-height: auto;
   }
 
-  .experience-card {
+  .Certificate-card {
     grid-template-columns: 1fr;
 
     gap: 10px;
@@ -804,7 +907,7 @@ a {
     padding: 24px;
   }
 
-  .experience-date {
+  .Certificate-date {
     font-size: 0.7rem;
   }
 }
