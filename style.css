@@ -697,7 +697,7 @@ a {
     width: 100%;
     margin-top: 120px;
     padding: 70px 40px 10px;
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-top: 1px solid rgb(255, 255, 255);
 }
 
 .footer-container {
@@ -708,19 +708,155 @@ a {
     flex-wrap: wrap;
 }
 
-.footer-logo h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
 
 .footer-logo p {
-    max-width: 250px;
-    line-height: 1.8;
+  max-width: 250px;
+  line-height: 1.2;
+  font-size: 30px;
 }
 
 .footer-links h3,
 .footer-social h3 {
     margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.contact-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 12px 14px;
+
+    color: #fff;
+    text-decoration: none;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    
+    overflow: hidden;
+}
+
+/* افکت نور هنگام Hover */
+.contact-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.contact-item:hover::before {
+    left: 140%;
+}
+
+.contact-item:hover {
+    transform: translateX(6px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon */
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 42px;
+    width: 42px;
+    height: 42px;
+
+    border-radius: 11px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.contact-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: currentColor;
+}
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+/* Telegram */
+.telegram-icon {
+    color: #229ED9;
+    background: rgba(34, 158, 217, 0.12);
+}
+
+.contact-item:hover .telegram-icon {
+    box-shadow: 0 0 18px rgba(34, 158, 217, 0.25);
+}
+
+/* Email */
+.email-icon {
+    color: #ff4d5a;
+    background: rgba(255, 77, 90, 0.12);
+}
+
+.contact-item:hover .email-icon {
+    box-shadow: 0 0 18px rgba(255, 77, 90, 0.25);
+}
+
+/* Text */
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-value {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* موبایل */
+@media (max-width: 600px) {
+    .contact-links {
+        max-width: 100%;
+    }
+
+    .contact-item {
+        padding: 11px 12px;
+    }
 }
 
 .footer-links ul {
@@ -747,11 +883,12 @@ a {
 
 .social-icons {
     display: flex;
-    gap: 18px;
+    gap: 1px;
 }
 
+
 .social-icons a {
-    width: 50px;
+    width: 45px;
     height: 50px;
 
     display: flex;
@@ -763,6 +900,10 @@ a {
     font-size: 1.3rem;
 
     transition: .3s;
+}
+
+.Contact-with{
+  font-size: 20px;
 }
 
 .social-icons a:hover {
@@ -780,7 +921,7 @@ a {
 
     align-items: center;
 
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-top: 1px solid rgb(255, 255, 255);
 }
 
 .back-to-top {

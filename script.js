@@ -309,3 +309,29 @@ document.querySelectorAll('a[href]').forEach(link => {
         }
     });
 });
+const contactItems = document.querySelectorAll(".contact-item");
+
+contactItems.forEach((item) => {
+
+    item.addEventListener("mousemove", (e) => {
+
+        const rect = item.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const moveX = (x - centerX) / 12;
+        const moveY = (y - centerY) / 12;
+
+        item.style.transform =
+            `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    item.addEventListener("mouseleave", () => {
+        item.style.transform = "";
+    });
+
+});
