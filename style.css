@@ -154,9 +154,7 @@ a {
   font-size: 0.95rem;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAVIGATION========================================================================== */
 
 .navigation {
   display: flex;
@@ -212,9 +210,7 @@ a {
   background: var(--accent);
 }
 
-/* =========================================================
-   CONTACT
-========================================================= */
+/* CONTACT==================================================== */
 
 .sidebar-contact {
   display: flex;
@@ -238,9 +234,7 @@ a {
   color: var(--accent);
 }
 
-/* =========================================================
-   SOCIALS
-========================================================= */
+/* SOCIALS========================================================================================== */
 
 .social-links {
   display: flex;
@@ -390,16 +384,12 @@ a {
   transform: translateY(-3px);
 }
 
-/* =========================================================
-   CONTENT SECTIONS
-========================================================= */
+/* CONTENT SECTIONS======================================================================== */
 
 .content-section {
   min-height: 100vh;
-
   padding: 120px 90px;
-
-  border-top: 1px solid var(--border);
+  border-top: 5px solid rgba(100, 255, 218, 0.3);
 }
 
 .section-heading {
@@ -424,9 +414,7 @@ a {
   letter-spacing: -0.04em;
 }
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ABOUT================================================================================ */
 
 .section-body {
   max-width: 760px;
@@ -446,9 +434,7 @@ a {
   color: var(--text-primary);
 }
 
-/* =========================================================
-   Certificate
-========================================================= */
+/* Certificate=============================================================== */
 
 .Certificate-list {
   display: flex;
@@ -514,9 +500,7 @@ a {
   margin-bottom: 18px;
 }
 
-/* =========================================================
-   TAGS
-========================================================= */
+/* TAGS ===================================================================== */
 
 .tags {
   display: flex;
@@ -540,9 +524,7 @@ a {
   font-weight: 600;
 }
 
-/* =========================================================
-   PROJECTS
-========================================================= */
+/* PROJECTS ===================================================================== */
 
 .projects-grid {
   display: grid;
@@ -644,9 +626,7 @@ a {
   align-items: center;
 }
 
-/* =========================================================
-   SKILLS
-========================================================= */
+/* SKILLS ================================================================ */
 
 .skills-wrapper {
   display: grid;
@@ -690,9 +670,7 @@ a {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER ==================================================================== */
 .footer {
     width: 100%;
     margin-top: 120px;
@@ -821,7 +799,7 @@ a {
     box-shadow: 0 0 18px rgba(34, 158, 217, 0.25);
 }
 
-/* Email */
+/* Email ==========================================================*/
 .email-icon {
     color: #ff4d5a;
     background: rgba(255, 77, 90, 0.12);
@@ -831,7 +809,7 @@ a {
     box-shadow: 0 0 18px rgba(255, 77, 90, 0.25);
 }
 
-/* Text */
+/* Text ============================================= */
 .contact-text {
     display: flex;
     flex-direction: column;
@@ -955,9 +933,7 @@ a {
         padding: 50px 25px;
     }
 }
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/*RESPONSIVE  ================================================================ */
 
 @media (max-width: 1100px) {
   :root {
@@ -1099,11 +1075,67 @@ body {
             rgba(8, 8, 8, 0.88),
             rgba(8, 8, 8, 0.88)
         ),
-        url("images/link-photo.png");
+        url("images/Background/1234.png");
 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 
     color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image:
+            linear-gradient(
+                rgba(8, 8, 8, 0.88),
+                rgba(8, 8, 8, 0.88)
+            ),
+            url("images/Background/download.jpg");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+.certificate-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.certificate-icon img {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.certificate-info h4 {
+    margin-top: 0;
+}
+@media (max-width: 768px) {
+
+    .certificate-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .certificate-icon img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .certificate-info h4 {
+        font-size: 18px;
+    }
+
+    .certificate-info p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
 }
