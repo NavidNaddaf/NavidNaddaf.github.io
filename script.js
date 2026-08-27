@@ -260,4 +260,94 @@ if (hero && content) {
   );
 }
 
-/* ================================BACK TO TOP============================= */
+/* test 01 */
+const certificateCards = document.querySelectorAll(".certificate-card");
+const lightbox = document.getElementById("certificateLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxIssuer = document.getElementById("lightboxIssuer");
+const lightboxCategory = document.getElementById("lightboxCategory");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+let currentIndex = 0;
+
+function openCertificate(index) {
+    const card = certificateCards[index];
+    const image = card.querySelector(".certificate-image");
+    const title = card.querySelector("h3");
+    const issuer = card.querySelector(".certificate-issuer");
+    const category = card.querySelector(".certificate-category");
+
+    currentIndex = index;
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightboxTitle.textContent = title.textContent;
+    lightboxIssuer.textContent = issuer.textContent;
+    lightboxCategory.textContent = category.textContent;
+
+    lightbox.classList.add("active");
+}
+
+function closeCertificate() {
+    lightbox.classList.remove("active");
+}
+
+function showPrevious() {
+    currentIndex =
+        (currentIndex - 1 + certificateCards.length) %
+        certificateCards.length;
+
+    openCertificate(currentIndex);
+}
+
+function showNext() {
+    currentIndex =
+        (currentIndex + 1) %
+        certificateCards.length;
+
+    openCertificate(currentIndex);
+}
+
+certificateCards.forEach((card, index) => {
+    const button = card.querySelector(".certificate-view");
+
+    button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        openCertificate(index);
+    });
+
+    card.querySelector(".certificate-image").addEventListener("click", () => {
+        openCertificate(index);
+    });
+});
+
+lightboxClose.addEventListener("click", closeCertificate);
+lightboxPrev.addEventListener("click", showPrevious);
+lightboxNext.addEventListener("click", showNext);
+
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        closeCertificate();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closeCertificate();
+    }
+
+    if (event.key === "ArrowLeft") {
+        showPrevious();
+    }
+
+    if (event.key === "ArrowRight") {
+        showNext();
+    }
+});

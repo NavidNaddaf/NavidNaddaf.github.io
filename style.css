@@ -1246,3 +1246,426 @@ body {
         transform: scale(0.98);
     }
 }
+
+/*test 01*/
+.certificates-gallery {
+    width: min(1400px, 90%);
+    margin: 0 auto;
+    padding: 110px 0;
+}
+
+.certificates-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 55px;
+}
+
+.section-index {
+    padding-top: 7px;
+    color: #7fffc2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.section-label {
+    margin-bottom: 8px;
+    color: #7fffc2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.certificates-header h2 {
+    color: #fff;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1;
+    letter-spacing: -2px;
+    font-weight: 800;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.certificate-card {
+    position: relative;
+    overflow: hidden;
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(127, 255, 194, 0.35);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.certificate-visual {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(127, 255, 194, 0.06),
+            rgba(255, 255, 255, 0.01)
+        ),
+        #111;
+}
+
+.certificate-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.02) 30%,
+            rgba(0, 0, 0, 0.72) 100%
+        );
+}
+
+.certificate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease;
+}
+
+.certificate-card:hover .certificate-image {
+    transform: scale(1.055);
+    filter: brightness(0.72);
+}
+
+.certificate-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.certificate-card:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-view {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    backdrop-filter: none;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.certificate-view:hover {
+    color: #7fffc2;
+    transform: translateY(-2px);
+}
+
+.certificate-number {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+}
+
+.certificate-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 25px 27px;
+}
+
+.certificate-category {
+    display: block;
+    margin-bottom: 9px;
+    color: #7fffc2;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.certificate-content h3 {
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.certificate-issuer {
+    color: #858585;
+    font-size: 13px;
+}
+
+.certificate-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #7fffc2;
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+.certificate-card:hover .certificate-arrow {
+    transform: translate(3px, -3px);
+    background: #7fffc2;
+    color: #050505;
+}
+
+.certificate-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 100px;
+    background: rgba(4, 4, 4, 0.96);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.certificate-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    width: min(1100px, 90vw);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+#lightboxImage {
+    max-width: 100%;
+    max-height: 74vh;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.7);
+    transform: scale(0.96);
+    transition: transform 0.4s ease;
+}
+
+.certificate-lightbox.active #lightboxImage {
+    transform: scale(1);
+}
+
+.lightbox-caption {
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox-caption span {
+    display: block;
+    margin-bottom: 7px;
+    color: #7fffc2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.lightbox-caption h3 {
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 26px;
+}
+
+.lightbox-caption p {
+    color: #858585;
+    font-size: 13px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #7fffc2;
+    color: #050505;
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 30px;
+}
+
+.lightbox-prev {
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-lightbox {
+        padding: 25px 60px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .certificates-gallery {
+        width: 88%;
+        padding: 80px 0;
+    }
+
+    .certificates-header {
+        gap: 15px;
+        margin-bottom: 35px;
+    }
+
+    .certificate-content {
+        padding: 20px;
+    }
+
+    .certificate-content h3 {
+        font-size: 23px;
+    }
+
+    .certificate-view {
+        padding: 11px 14px;
+    }
+
+    .certificate-lightbox {
+        padding: 20px 18px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 40px;
+        top: auto;
+        bottom: 25px;
+        transform: none;
+    }
+
+    .lightbox-prev {
+        left: 20px;
+    }
+
+    .lightbox-next {
+        right: 20px;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        transform: scale(1.05);
+    }
+
+    #lightboxImage {
+        max-height: 66vh;
+    }
+}
+
+.robot-arm img {
+    width: min(300px, 80vw);
+    height: auto;
+}
+#about-photo img{
+    width: min(120px, 80vw);
+    height: auto;
+}
